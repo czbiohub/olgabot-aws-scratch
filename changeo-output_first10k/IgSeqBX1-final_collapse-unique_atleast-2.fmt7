@@ -1,0 +1,32 @@
+# IGBLASTN 2.6.1+
+# Query: CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1
+# Database: /usr/local/share/igblast/database/imgt_human_ig_v /usr/local/share/igblast/database/imgt_human_ig_d /usr/local/share/igblast/database/imgt_human_ig_j
+# Domain classification requested: imgt
+
+# Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+# V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV2-5*01,IGHV2-5*02,IGHV2-5*04	IGHD5-24*01,IGHD6-13*01,IGHD6-13*01	N/A	VH	No	N/A	N/A	-
+
+# V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+TCTGG	ACTANGAGCAAGAGG	AGAGA	N/A	N/A	
+
+# Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	324	343	20	20	0	0	100
+Total	N/A	N/A	20	20	0	0	100
+
+# Hit table (the first field indicates the chain type of the hit)
+# Fields: query id, subject id, % identity, alignment length, mismatches, gap opens, gaps, q. start, q. end, s. start, s. end, evalue, bit score, query seq, subject seq, BTOP
+# 6 hits found
+V	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHV2-5*01	100.000	20	0	0	0	324	343	4	23	0.006	33.0	ATCACCTTGAAGGAGTCTGG	ATCACCTTGAAGGAGTCTGG	20
+V	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHV2-5*02	100.000	20	0	0	0	324	343	4	23	0.006	33.0	ATCACCTTGAAGGAGTCTGG	ATCACCTTGAAGGAGTCTGG	20
+V	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHV2-5*04	100.000	20	0	0	0	324	343	4	23	0.006	33.0	ATCACCTTGAAGGAGTCTGG	ATCACCTTGAAGGAGTCTGG	20
+D	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHD5-24*01	100.000	5	0	0	0	359	363	3	7	191	10.4	AGAGA	AGAGA	5
+D	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHD6-13*01	100.000	5	0	0	0	367	371	8	12	191	10.4	GCAGC	GCAGC	5
+D	reversed|CTCGGGATAAGTAGCCC|CONSCOUNT=2|PRCONS=IGH.forP2_08N|DUPCOUNT=1	IGHD6-13*01	100.000	5	0	0	0	367	371	11	15	191	10.4	GCAGC	GCAGC	5
+
+Total queries = 1
+Total identifiable CDR3 = 0
+Total unique clonotypes = 0
+
+# BLAST processed 1 queries
