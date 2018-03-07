@@ -1,0 +1,6 @@
+IDENTIFIER: IgSeqBX1
+DIRECTORY: /data/presto-output_krista_primers_barcode8_R2_reverse_full_dataset
+PRESTO VERSION: 0.5.6-2018.01.17
+
+START
+   1: FilterSeq quality        23:09 03/07/18

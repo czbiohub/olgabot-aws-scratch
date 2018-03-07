@@ -1,0 +1,12 @@
+IDENTIFIER: IgSeqBX1
+DIRECTORY: /data/changeo-output_first10k
+CHANGEO VERSION: 0.3.11-2018.02.06
+IGBLAST VERSION:  igblast 1.7.0, build May  6 2017 17:13:23
+
+START
+   1: Converting to FASTA      23:10 03/07/18
+   2: IgBLAST                  23:10 03/07/18
+   3: MakeDb igblast           23:10 03/07/18
+   4: Compressing files        23:11 03/07/18
+DONE
+
