@@ -5,7 +5,6 @@ import sys
 import signal
 import glob
 import cziRna1
-import click
 
 # Get the option from the first and only argument.
 if len(sys.argv) != 2:
@@ -13,7 +12,7 @@ if len(sys.argv) != 2:
 option = int(sys.argv[1])    
 
 if not os.path.exists('data'):
-    os.path.mkdir('data')
+    os.mkdir('data')
 
 
 readLength = 62
@@ -45,10 +44,6 @@ minLeafBaseCount = readLength
 
 # Controls the amount of detail when writing labels of the contracted read graph.
 detailedAssemblyOutput = True
-
-
-@click.command()
-def cli():
 
 
 
