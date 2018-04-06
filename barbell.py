@@ -143,3 +143,7 @@ def assemble(ctx,
         min_path_read_count,
         reads_fraction_for_left_right_edges,
         max_fragment_length)
+
+
+if __name__ == "__main__":
+    cli()
