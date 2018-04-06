@@ -9,10 +9,19 @@ import click
 @click.group()
 @click.option('--read-length', default=62)
 @click.option('--kmer-length', default=16)
+@click.option('--hash-fraction', default=0.22,
+              help="The higher, the better. This is the magic number "
+                   "for the overlap graph, but higher numbers make your "
+                   "computer sad. Specifically, this is the fraction of kmers "
+                   "from sliding windows of one pair of the reads. The total "
+                   "percentage of kmers kept is the square of this number,  "
+                   "e.g. 0.22^2 ~ 0.05. For debugging, make this number "
+                   "really small (e.g. 0.1) to see if it will actually run")
 @click.pass_context
-def cli(ctx, read_length, kmer_length):
+def cli(ctx, read_length, kmer_length, hash_fraction):
     ctx.obj['READ_LENGTH'] = read_length
     ctx.obj['KMER_LENGTH'] = kmer_length
+    ctx.obj['HASH_FRACTION'] = hash_fraction
 
 
 def resolve_reads(pattern):
@@ -57,36 +66,32 @@ def twobit(ctx, read1, read2):
 
 @cli.command()
 @click.option('--log2-bucket-size', default=24)
-@click.option('--hash-fraction', default=0.22,
-              help="The higher, the better. This is the magic number "
-                   "for the overlap graph, but higher numbers make your "
-                   "computer sad. Specifically, this is the fraction of kmers "
-                   "from sliding windows of one pair of the reads. The total "
-                   "percentage of kmers kept is the square of this number,  "
-                   "e.g. 0.22^2 ~ 0.05. For debugging, make this number "
-                   "really small (e.g. 0.1) to see if it will actually run")
 @click.pass_context
-def index(ctx, log2_bucket_size, hash_fraction):
+def index(ctx, log2_bucket_size):
     """Step 2: Create a hashed index of the reads"""
+    read_length = ctx.obj["READ_LENGTH"]
+    kmer_length = ctx.obj["KMER_LENGTH"]
+    hash_fraction = ctx.obj["HASH_FRACTION"]
+
     assembler = cziRna1.Assembler()
-    assembler.accessReads(ctx.obj["READ_LENGTH"])
+    assembler.accessReads(read_length)
     input('Enter something to continue:')
-    assembler.createIndex(ctx.obj["KMER_LENGTH"],
+    assembler.createIndex(kmer_length,
                           log2_bucket_size, hash_fraction)
 
 
 @cli.command()
-@click.option('--hash-fraction', default=0.1)
 @click.option('--min-overlap', default=16)
 @click.option('--error-rate', default=0.03)
 @click.option('--overflow', default=20)
 @click.option('--load-factor', default=0.3)
 @click.pass_context
-def overlap(ctx, hash_fraction, min_overlap, error_rate, overflow,
+def overlap(ctx, min_overlap, error_rate, overflow,
             load_factor):
     """Step 3: Find pairs of mated reads that overlap on both sides"""
     read_length = ctx.obj["READ_LENGTH"]
     kmer_length = ctx.obj["KMER_LENGTH"]
+    hash_fraction = ctx.obj["HASH_FRACTION"]
 
     assembler = cziRna1.Assembler()
     assembler.accessReads(read_length)
