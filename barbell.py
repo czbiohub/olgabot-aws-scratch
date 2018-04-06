@@ -7,8 +7,8 @@ import click
 
 
 @click.group()
-@click.argument('--read-length', default=62)
-@click.argument('--kmer-length', default=16)
+@click.option('--read-length', default=62)
+@click.option('--kmer-length', default=16)
 @click.pass_context
 def cli(ctx, read_length, kmer_length):
     ctx.obj['READ_LENGTH'] = read_length
@@ -36,8 +36,8 @@ def get_read_length(fastq):
 
 
 @cli.command()
-@click.argument('--read1', default='*R1*fastq')
-@click.argument('--read2', default='*R2*fastq')
+@click.option('--read1', default='*R1*fastq')
+@click.option('--read2', default='*R2*fastq')
 @click.pass_context
 def twobit(ctx, read1, read2):
     if not os.path.exists('data'):
@@ -55,8 +55,8 @@ def twobit(ctx, read1, read2):
 
 
 @cli.command()
-@click.argument('--log2-bucket-size', default=24)
-@click.argument('--hash-fraction', default=0.1)
+@click.option('--log2-bucket-size', default=24)
+@click.option('--hash-fraction', default=0.1)
 @click.pass_context
 def index(ctx, log2_bucket_size, hash_fraction):
     assembler = cziRna1.Assembler()
@@ -67,11 +67,11 @@ def index(ctx, log2_bucket_size, hash_fraction):
 
 
 @cli.command()
-@click.argument('--hash-fraction', default=0.1)
-@click.argument('--min-overlap', default=16)
-@click.argument('--error-rate', default=0.03)
-@click.argument('--overflow', default=20)
-@click.argument('--load-factor', default=0.3)
+@click.option('--hash-fraction', default=0.1)
+@click.option('--min-overlap', default=16)
+@click.option('--error-rate', default=0.03)
+@click.option('--overflow', default=20)
+@click.option('--load-factor', default=0.3)
 @click.pass_context
 def overlap(ctx, hash_fraction, min_overlap, error_rate, overflow,
             load_factor):
@@ -86,25 +86,25 @@ def overlap(ctx, hash_fraction, min_overlap, error_rate, overflow,
 
 
 @cli.command()
-@click.argument('--max-connectivity', default=100)
-@click.argument('--max-component-size', default=1e5)
-@click.argument('--error-rate', default=0.03)
-@click.argument('--min-overlap', default=16)
-@click.argument('--min-concordant-count', default=6)
-@click.argument('--max-discordant-ratio', default=0.03)
-@click.argument('--min-isolated-read-count', default=50,
+@click.option('--max-connectivity', default=100)
+@click.option('--max-component-size', default=1e5)
+@click.option('--error-rate', default=0.03)
+@click.option('--min-overlap', default=16)
+@click.option('--min-concordant-count', default=6)
+@click.option('--max-discordant-ratio', default=0.03)
+@click.option('--min-isolated-read-count', default=50,
                 help='Minimum number of reads for an isolated vertex to '
                      'be kept')
-@click.argument('--min-isolated-base-count', default=100,
+@click.option('--min-isolated-base-count', default=100,
                 help='Minimum number of basesfor an isolated vertex to '
                      'be kept')
-@click.argument('--min-leaf-read-count', default=6,
+@click.option('--min-leaf-read-count', default=6,
                 help="Minimum number of reads for a leaf vertex to be kept")
-@click.argument('--min-leaf-base-count', default=6,
+@click.option('--min-leaf-base-count', default=6,
                 help="Minimum number of bases for a leaf vertex to be kept")
-@click.argument('--min-path-read-count', default=30)
-@click.argument('--reads-fraction-for-left-right-edges', default=0.2)
-@click.argument('--max-fragment-length', default=500)
+@click.option('--min-path-read-count', default=30)
+@click.option('--reads-fraction-for-left-right-edges', default=0.2)
+@click.option('--max-fragment-length', default=500)
 def assemble(ctx,
              max_connectivity,
              max_component_size,
