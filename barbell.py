@@ -56,6 +56,10 @@ def twobit(ctx, read1, read2):
     read1 = resolve_reads(read1)
     read2 = resolve_reads(read2)
 
+    if len(read1) == 0 or len(read2) == 0:
+        click.echo("No reads found!")
+        return
+
     # read_length = get_read_length(read1)
     assembler = cziRna1.Assembler()
 
@@ -101,7 +105,7 @@ def overlap(ctx, min_overlap, error_rate, overflow,
 
 
 @cli.command()
-@click.option('--min-component-size', default=1e5)
+@click.option('--min-component-size', default=1e5, type=int)
 @click.pass_context
 def components(ctx, min_component_size):
     """Step 4: Find connected components of the global mate read graph."""
@@ -113,7 +117,7 @@ def components(ctx, min_component_size):
 
 @cli.command()
 @click.option('--max-connectivity', default=100)
-@click.option('--max-component-size', default=1e5)
+@click.option('--max-component-size', default=1e5, type=int)
 @click.option('--error-rate', default=0.03)
 @click.option('--min-overlap', default=16)
 @click.option('--min-concordant-count', default=6)
