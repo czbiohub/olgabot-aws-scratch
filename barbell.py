@@ -136,6 +136,7 @@ def components(ctx, min_component_size):
 @click.option('--reads-fraction-for-left-right-edges', default=0.2)
 @click.option('--max-fragment-length', default=500)
 @click.option('--debug', default=False)
+@click.pass_context
 def assemble(ctx,
              max_connectivity,
              max_component_size,
