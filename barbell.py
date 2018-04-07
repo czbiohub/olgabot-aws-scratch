@@ -123,15 +123,15 @@ def components(ctx, min_component_size):
 @click.option('--min-concordant-count', default=6)
 @click.option('--max-discordant-ratio', default=0.03)
 @click.option('--min-isolated-read-count', default=50,
-                help='Minimum number of reads for an isolated vertex to '
-                     'be kept')
+              help='Minimum number of reads for an isolated vertex to '
+                   'be kept')
 @click.option('--min-isolated-base-count', default=100,
-                help='Minimum number of basesfor an isolated vertex to '
-                     'be kept')
+              help='Minimum number of basesfor an isolated vertex to '
+                   'be kept')
 @click.option('--min-leaf-read-count', default=6,
-                help="Minimum number of reads for a leaf vertex to be kept")
+              help="Minimum number of reads for a leaf vertex to be kept")
 @click.option('--min-leaf-base-count', default=6,
-                help="Minimum number of bases for a leaf vertex to be kept")
+              help="Minimum number of bases for a leaf vertex to be kept")
 @click.option('--min-path-read-count', default=30)
 @click.option('--reads-fraction-for-left-right-edges', default=0.2)
 @click.option('--max-fragment-length', default=500)
