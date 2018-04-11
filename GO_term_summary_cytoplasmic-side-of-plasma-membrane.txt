@@ -1,0 +1,207 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:87859	Abl1	c-abl oncogene 1, non-receptor tyrosine kinase	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:87860	Abl2	v-abl Abelson murine leukemia viral oncogene 2 (arg, Abelson-related gene)	1		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:87881	Acp1	acid phosphatase 1, soluble	12		cytoplasmic side of plasma membrane			ISO	P24666 	J:164563 	
+MGI:2685419	Ajap1	adherens junction associated protein 1	4		cytoplasmic side of plasma membrane			ISO	Q9UKB5 	J:164563 	
+MGI:2685104	Akap5	A kinase (PRKA) anchor protein 5	12		cytoplasmic side of plasma membrane			ISO	P24588 	J:164563 	
+MGI:87997	Alox15	arachidonate 15-lipoxygenase	11		extrinsic component of cytoplasmic side of plasma membrane			ISO	P16050 	J:164563 	
+MGI:1916188	Aspscr1	alveolar soft part sarcoma chromosome region, candidate 1 (human)	11		cytoplasmic side of plasma membrane			IDA		J:89969 	
+MGI:88110	Atp2a2	ATPase, Ca++ transporting, cardiac muscle, slow twitch 2	5		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:2174 	J:155856 	
+MGI:104653	Atp2b1	ATPase, Ca++ transporting, plasma membrane 1	10		cytoplasmic side of plasma membrane			ISO	RGD:621303 	J:155856 	
+MGI:1916297	Atp2c2	ATPase, Ca++ transporting, type 2C, member 2	8		cytoplasmic side of plasma membrane			IDA		J:203715 	
+MGI:1197009	Birc2	baculoviral IAP repeat-containing 2	9		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:88169	Blk	B lymphoid kinase	14		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1101778	Bmx	BMX non-receptor tyrosine kinase	X		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:88216	Btk	Bruton agammaglobulinemia tyrosine kinase	X		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1919014	C2cd2l	C2 calcium-dependent domain containing 2-like	9	colocalizes_with	cytoplasmic side of apical plasma membrane			ISO	O14523 	J:164563 	
+MGI:107571	Cav2	caveolin 2	6		extrinsic component of cytoplasmic side of plasma membrane			ISO	P51636 	J:164563 	
+MGI:107571	Cav2	caveolin 2	6		extrinsic component of cytoplasmic side of plasma membrane			ISS	P51636 	J:154838 	
+MGI:88320	Cd2	CD2 antigen	3		cytoplasmic side of plasma membrane			IDA		J:2873 	
+MGI:88354	Cdh1	cadherin 1	8		cytoplasmic side of plasma membrane			ISO	P12830 	J:164563 	
+MGI:97516	Cdk16	cyclin-dependent kinase 16	X		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q00536 	J:164563 	
+MGI:1922858	Chmp4b	charged multivesicular body protein 4B	2		cytoplasmic side of plasma membrane			ISO	Q9H444 	J:164563 	
+MGI:99484	Chuk	conserved helix-loop-helix ubiquitous kinase	19		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:104650	Cnr2	cannabinoid receptor 2 (macrophage)	4		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:619713 	J:155856 	
+MGI:88537	Csk	c-src tyrosine kinase	9		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1921506	Cyld	CYLD lysine 63 deubiquitinase	8		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q9NQC7 	J:164563 	
+MGI:1334257	Cyth1	cytohesin 1	11		extrinsic component of cytoplasmic side of plasma membrane			IDA		J:202589 	
+MGI:1335107	Cyth3	cytohesin 3	5		extrinsic component of cytoplasmic side of plasma membrane			ISO	O43739 	J:164563 	
+MGI:1916851	Dab2ip	disabled 2 interacting protein	2		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:1913843	Diablo	diablo, IAP-binding mitochondrial protein	5		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:107231	Dlg1	discs large MAGUK scaffold protein 1	16		cytoplasmic side of plasma membrane			ISO	Q12959 	J:164563 	
+MGI:1277959	Dlg4	discs large MAGUK scaffold protein 4	11		extrinsic component of cytoplasmic side of plasma membrane			IDA		J:70687 	
+MGI:94930	Dsg1a	desmoglein 1 alpha	18		cytoplasmic side of plasma membrane			ISO	Q02413 	J:164563 	
+MGI:2664357	Dsg1b	desmoglein 1 beta	18		cytoplasmic side of plasma membrane			ISO	Q02413 	J:164563 	
+MGI:104627	Dst	dystonin	1		cytoplasmic side of plasma membrane			IDA		J:104464 	
+MGI:106039	Dtna	dystrobrevin alpha	18		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:1561985 	J:155856 	
+MGI:95401	Epb41	erythrocyte membrane protein band 4.1	4		cytoplasmic side of plasma membrane			ISO	RGD:1564762 	J:155856 	
+MGI:1333763	Epn1	epsin 1	7		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:619772 	J:155856 	
+MGI:1921405	Errfi1	ERBB receptor feedback inhibitor 1	4		extrinsic component of cytoplasmic side of plasma membrane			IDA		J:109556 	
+MGI:1261845	Esyt2	extended synaptotagmin-like protein 2	12		extrinsic component of cytoplasmic side of plasma membrane			ISO	A0FGR8 	J:164563 	
+MGI:1098699	Esyt3	extended synaptotagmin-like protein 3	9		extrinsic component of cytoplasmic side of plasma membrane			ISO	A0FGR9 	J:164563 	
+MGI:2445020	Exoc1	exocyst complex component 1	5		cytoplasmic side of apical plasma membrane			ISO	Q9NV70 	J:164563 	
+MGI:98931	Ezr	ezrin	17		cytoplasmic side of apical plasma membrane			ISO	P15311 	J:164563 	
+MGI:2446173	Farp1	FERM, RhoGEF (Arhgef) and pleckstrin domain protein 1 (chondrocyte-derived)	14		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:1305346 	J:155856 	
+MGI:105917	Fer	fer (fms/fps related) protein kinase	17		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:105917	Fer	fer (fms/fps related) protein kinase	17		extrinsic component of cytoplasmic side of plasma membrane			ISO	P16591 	J:164563 	
+MGI:2385001	Fermt2	fermitin family member 2	14		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q96AC1 	J:164563 	
+MGI:95514	Fes	feline sarcoma oncogene	7		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:95514	Fes	feline sarcoma oncogene	7		extrinsic component of cytoplasmic side of plasma membrane			ISO	P07332 	J:164563 	
+MGI:95524	Fgfr3	fibroblast growth factor receptor 3	5		cytoplasmic side of plasma membrane			IDA		J:88289 	
+MGI:95527	Fgr	FGR proto-oncogene, Src family tyrosine kinase	4		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:103265	Frk	fyn-related kinase	10		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:95602	Fyn	Fyn proto-oncogene	10		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:105979	G6pdx	glucose-6-phosphate dehydrogenase X-linked	X		cytoplasmic side of plasma membrane			ISO	P11413 	J:164563 	
+MGI:99844	Gem	GTP binding protein (gene overexpressed in skeletal muscle)	4		cytoplasmic side of plasma membrane			ISO	P55040 	J:164563 	
+MGI:95766	Gna11	guanine nucleotide binding protein, alpha 11	10		heterotrimeric G-protein complex			ISA	U38501 	J:10067 	
+MGI:95766	Gna11	guanine nucleotide binding protein, alpha 11	10		heterotrimeric G-protein complex			TAS		J:49140 	
+MGI:95767	Gna12	guanine nucleotide binding protein, alpha 12	5		heterotrimeric G-protein complex			TAS		J:43154 J:53243 	
+MGI:95768	Gna13	guanine nucleotide binding protein, alpha 13	11		heterotrimeric G-protein complex			ISA	U38501 	J:10067 	
+MGI:95768	Gna13	guanine nucleotide binding protein, alpha 13	11		heterotrimeric G-protein complex			TAS		J:43154 J:53243 	
+MGI:95769	Gna14	guanine nucleotide binding protein, alpha 14	19		heterotrimeric G-protein complex			IBA	PTN000026392 	J:161428 	
+MGI:95769	Gna14	guanine nucleotide binding protein, alpha 14	19		heterotrimeric G-protein complex			ISA	U38501 	J:10067 	
+MGI:95770	Gna15	guanine nucleotide binding protein, alpha 15	10		heterotrimeric G-protein complex			IBA	PTN000026392 	J:161428 	
+MGI:95770	Gna15	guanine nucleotide binding protein, alpha 15	10		heterotrimeric G-protein complex			NAS		J:58185 	
+MGI:95771	Gnai1	guanine nucleotide binding protein (G protein), alpha inhibiting 1	5		heterotrimeric G-protein complex			IBA	PTN000026392 	J:161428 	
+MGI:95772	Gnai2	guanine nucleotide binding protein (G protein), alpha inhibiting 2	9		heterotrimeric G-protein complex			IBA	PTN000026392 	J:161428 	
+MGI:95773	Gnai3	guanine nucleotide binding protein (G protein), alpha inhibiting 3	3		heterotrimeric G-protein complex			TAS		J:10067 	
+MGI:95774	Gnal	guanine nucleotide binding protein, alpha stimulating, olfactory type	18		heterotrimeric G-protein complex			IBA	PTN000026392 	J:161428 	
+MGI:95774	Gnal	guanine nucleotide binding protein, alpha stimulating, olfactory type	18		heterotrimeric G-protein complex			ISA	U38501 	J:10067 	
+MGI:95775	Gnao1	guanine nucleotide binding protein, alpha O	8		heterotrimeric G-protein complex			TAS		J:10067 	
+MGI:95776	Gnaq	guanine nucleotide binding protein, alpha q polypeptide	19		heterotrimeric G-protein complex			TAS		J:44598 J:49140 	
+MGI:95777	Gnas	GNAS (guanine nucleotide binding protein, alpha stimulating) complex locus	2		heterotrimeric G-protein complex			ISO	RGD:2716 	J:155856 	
+MGI:95777	Gnas	GNAS (guanine nucleotide binding protein, alpha stimulating) complex locus	2		heterotrimeric G-protein complex			ISO	M13006 	J:8410 	
+MGI:95777	Gnas	GNAS (guanine nucleotide binding protein, alpha stimulating) complex locus	2		heterotrimeric G-protein complex			TAS		J:10067 	
+MGI:95778	Gnat1	guanine nucleotide binding protein, alpha transducing 1	9		heterotrimeric G-protein complex			IC	GO:0031683 	J:125151 	
+MGI:95778	Gnat1	guanine nucleotide binding protein, alpha transducing 1	9		heterotrimeric G-protein complex			ISO	RGD:1304683 	J:155856 	
+MGI:95778	Gnat1	guanine nucleotide binding protein, alpha transducing 1	9		heterotrimeric G-protein complex			ISO	K03253 	J:9731 	
+MGI:95778	Gnat1	guanine nucleotide binding protein, alpha transducing 1	9		heterotrimeric G-protein complex			TAS		J:31020 	
+MGI:95779	Gnat2	guanine nucleotide binding protein, alpha transducing 2	3		heterotrimeric G-protein complex			TAS		J:31020 	
+MGI:3588268	Gnat3	guanine nucleotide binding protein, alpha transducing 3	5		heterotrimeric G-protein complex			IPI	AAK40268 P04901 	J:68225 	
+MGI:95780	Gnaz	guanine nucleotide binding protein, alpha z subunit	10		heterotrimeric G-protein complex			TAS		J:10067 	
+MGI:95781	Gnb1	guanine nucleotide binding protein (G protein), beta 1	4		heterotrimeric G-protein complex			IPI	Q9JMF3 	J:68225 	
+MGI:95781	Gnb1	guanine nucleotide binding protein (G protein), beta 1	4		heterotrimeric G-protein complex			ISO	P62873 	J:21436 	
+MGI:95781	Gnb1	guanine nucleotide binding protein (G protein), beta 1	4		heterotrimeric G-protein complex			ISO	RGD:2718 	J:155856 	
+MGI:95784	Gnb2	guanine nucleotide binding protein (G protein), beta 2	5		heterotrimeric G-protein complex			ISO	P11017 	J:21436 	
+MGI:95785	Gnb3	guanine nucleotide binding protein (G protein), beta 3	6		heterotrimeric G-protein complex			TAS		J:21436 	
+MGI:104581	Gnb4	guanine nucleotide binding protein (G protein), beta 4	3		heterotrimeric G-protein complex			ISA	P62873 	J:21436 	
+MGI:102705	Gng2	guanine nucleotide binding protein (G protein), gamma 2	14		heterotrimeric G-protein complex			ISO	P63212 	J:14657 	
+MGI:102705	Gng2	guanine nucleotide binding protein (G protein), gamma 2	14		heterotrimeric G-protein complex			ISO	RGD:69268 	J:155856 	
+MGI:102704	Gng3	guanine nucleotide binding protein (G protein), gamma 3	19		heterotrimeric G-protein complex			ISA	O14610 	J:68225 	
+MGI:102704	Gng3	guanine nucleotide binding protein (G protein), gamma 3	19		heterotrimeric G-protein complex			ISO	M58349 	J:14657 	
+MGI:102703	Gng4	guanine nucleotide binding protein (G protein), gamma 4	13		heterotrimeric G-protein complex			ISA	K02199 	J:14657 	
+MGI:95787	Gng7	guanine nucleotide binding protein (G protein), gamma 7	10		heterotrimeric G-protein complex			IEA	IPR001770 IPR015898 IPR036284 	J:72247 	
+MGI:109163	Gng8	guanine nucleotide binding protein (G protein), gamma 8	7		heterotrimeric G-protein complex			IEA	IPR001770 IPR015898 IPR036284 	J:72247 	
+MGI:1336169	Gng10	guanine nucleotide binding protein (G protein), gamma 10	4		heterotrimeric G-protein complex			ISO	RGD:621514 	J:155856 	
+MGI:1913316	Gng11	guanine nucleotide binding protein (G protein), gamma 11	6		heterotrimeric G-protein complex			IEA	IPR001770 IPR015898 IPR036284 	J:72247 	
+MGI:1336171	Gng12	guanine nucleotide binding protein (G protein), gamma 12	6		heterotrimeric G-protein complex			IEA	IPR001770 IPR015898 IPR036284 	J:72247 	
+MGI:1925616	Gng13	guanine nucleotide binding protein (G protein), gamma 13	17		heterotrimeric G-protein complex			IPI	MGI:108006 	J:68225 	
+MGI:109165	Gngt1	guanine nucleotide binding protein (G protein), gamma transducing activity polypeptide 1	6		heterotrimeric G-protein complex			ISO	RGD:1595475 	J:155856 	
+MGI:109165	Gngt1	guanine nucleotide binding protein (G protein), gamma transducing activity polypeptide 1	6		heterotrimeric G-protein complex			ISO	K03255 	J:14657 	
+MGI:893584	Gngt2	guanine nucleotide binding protein (G protein), gamma transducing activity polypeptide 2	11		heterotrimeric G-protein complex			IEA	IPR001770 IPR015898 IPR036284 	J:72247 	
+MGI:109602	Gphn	gephyrin	12		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:69194 	J:155856 	
+MGI:1918770	Grap	GRB2-related adaptor protein	11		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1333842	Grap2	GRB2-related adaptor protein 2	15		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:95805	Grb2	growth factor receptor bound protein 2	11		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:96052	Hck	hemopoietic cell kinase	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:96052	Hck	hemopoietic cell kinase	2		extrinsic component of cytoplasmic side of plasma membrane			ISO	P08631 	J:164563 	
+MGI:1099804	Hip1	huntingtin interacting protein 1	5		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:620305 	J:155856 	
+MGI:1928676	Htra2	HtrA serine peptidase 2	6		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:1338071	Ikbkb	inhibitor of kappaB kinase beta	8		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:1352757	Iqgap1	IQ motif containing GTPase activating protein 1	7		extrinsic component of cytoplasmic side of plasma membrane			ISO	P46940 	J:164563 	
+MGI:96621	Itk	IL2 inducible T cell kinase	11		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:96628	Jak1	Janus kinase 1	4		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:96629	Jak2	Janus kinase 2	19		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:99928	Jak3	Janus kinase 3	8		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:96650	Jup	junction plakoglobin	11		cytoplasmic side of plasma membrane			ISO	RGD:620412 	J:155856 	
+MGI:109155	Kcnab1	potassium voltage-gated channel, shaker-related subfamily, beta member 1	3		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q14722 	J:164563 	
+MGI:109239	Kcnab2	potassium voltage-gated channel, shaker-related subfamily, beta member 2	4		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:61828 	J:155856 	
+MGI:1917607	Kcnip1	Kv channel-interacting protein 1	11		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q9NZI2 	J:164563 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		cytoplasmic side of plasma membrane			ISO	RGD:620568 	J:155856 	
+MGI:96680	Kras	Kirsten rat sarcoma viral oncogene homolog	6		extrinsic component of cytoplasmic side of plasma membrane			ISO	P01116 	J:164563 	
+MGI:96756	Lck	lymphocyte protein tyrosine kinase	4		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:2140175	Ldlrap1	low density lipoprotein receptor adaptor protein 1	4		cytoplasmic side of plasma membrane			ISO	Q5SW96 	J:164563 	
+MGI:1929512	Litaf	LPS-induced TN factor	16		cytoplasmic side of plasma membrane			ISO	Q99732 	J:164563 	
+MGI:96816	Lor	loricrin	3		cytoplasmic side of plasma membrane			IDA		J:17951 	
+MGI:96892	Lyn	LYN proto-oncogene, Src family tyrosine kinase	4		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1346867	Map2k2	mitogen-activated protein kinase kinase 2	10		cytoplasmic side of plasma membrane			ISO	P36507 	J:164563 	
+MGI:97180	Mapt	microtubule-associated protein tau	11		cytoplasmic side of plasma membrane			ISO	RGD:69329 	J:155856 	
+MGI:99259	Matk	megakaryocyte-associated tyrosine kinase	10		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:103263	Mcf2l	mcf.2 transforming sequence-like	8		extrinsic component of cytoplasmic side of plasma membrane			ISO	O15068 	J:164563 	
+MGI:1913678	Mien1	migration and invasion enhancer 1	11		intrinsic component of the cytoplasmic side of the plasma membrane			ISO	Q9BRT3 	J:164563 	
+MGI:97167	Msn	moesin	X		cytoplasmic side of plasma membrane			ISO	RGD:621260 	J:155856 	
+MGI:2142908	Myzap	myocardial zonula adherens protein	9		extrinsic component of cytoplasmic side of plasma membrane			IDA		J:170871 	
+MGI:97306	Nf1	neurofibromin 1	11		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:3845555	Npcd	neuronal pentraxin chromo domain	15		cytoplasmic side of plasma membrane	is a part of neuron		IDA		J:95516 	
+MGI:2157018	Nphs2	nephrosis 2, podocin	1		intrinsic component of the cytoplasmic side of the plasma membrane			IDA		J:184963 	
+MGI:2157018	Nphs2	nephrosis 2, podocin	1		intrinsic component of the cytoplasmic side of the plasma membrane			ISO	Q9NP85 	J:164563 	
+MGI:97386	Ntsr1	neurotensin receptor 1	2		cytoplasmic side of plasma membrane			ISO	RGD:1306076 	J:155856 	
+MGI:1925668	Pgm5	phosphoglucomutase 5	19		cytoplasmic side of plasma membrane			IBA	PTN000501335 	J:161428 	
+MGI:1925668	Pgm5	phosphoglucomutase 5	19		cytoplasmic side of plasma membrane			ISO	Q15124 	J:164563 	
+MGI:109281	Pkp4	plakophilin 4	2		cytoplasmic side of plasma membrane			ISO	Q99569 	J:164563 	
+MGI:2387581	Ppp1r9b	protein phosphatase 1, regulatory subunit 9B	11		cytoplasmic side of dendritic spine plasma membrane			ISO	RGD:632281 	J:155856 	
+MGI:107164	Ppp3ca	protein phosphatase 3, catalytic subunit, alpha isoform	3	colocalizes_with	cytoplasmic side of plasma membrane			ISO	Q08209 	J:164563 	
+MGI:109583	Pten	phosphatase and tensin homolog	19		cytoplasmic side of plasma membrane			ISO	P60484 	J:164563 	
+MGI:95481	Ptk2	PTK2 protein tyrosine kinase 2	15		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:104908	Ptk2b	PTK2 protein tyrosine kinase 2 beta	14		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:99683	Ptk6	PTK6 protein tyrosine kinase 6	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1277096	Ptp4a1	protein tyrosine phosphatase 4a1	1		cytoplasmic side of plasma membrane			ISO	Q93096 	J:164563 	
+MGI:105307	Ptpn3	protein tyrosine phosphatase, non-receptor type 3	4		cytoplasmic side of plasma membrane			ISO	P26045 	J:164563 	
+MGI:1099792	Ptpn4	protein tyrosine phosphatase, non-receptor type 4	1		cytoplasmic side of plasma membrane			ISO	P29074 	J:164563 	
+MGI:2156893	Ptpn7	protein tyrosine phosphatase, non-receptor type 7	1		cytoplasmic side of plasma membrane			ISO	P35236 	J:164563 	
+MGI:107170	Ptpn22	protein tyrosine phosphatase, non-receptor type 22 (lymphoid)	3		cytoplasmic side of plasma membrane			IDA		J:169808 	
+MGI:107170	Ptpn22	protein tyrosine phosphatase, non-receptor type 22 (lymphoid)	3		cytoplasmic side of plasma membrane			ISO	Q9Y2R2 	J:164563 	
+MGI:894308	Rab21	RAB21, member RAS oncogene family	10		cytoplasmic side of plasma membrane			ISO	Q9UL25 	J:164563 	
+MGI:1349423	Racgap1	Rac GTPase-activating protein 1	15		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q9H0H5 	J:164563 	
+MGI:97860	Rasa1	RAS p21 protein activator 1	13		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:2149960	Rasa2	RAS p21 protein activator 2	9		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:1197013	Rasa3	RAS p21 protein activator 3	8		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:1197013	Rasa3	RAS p21 protein activator 3	8		intrinsic component of the cytoplasmic side of the plasma membrane			ISO	Q14644 	J:164563 	
+MGI:1858600	Rasa4	RAS p21 protein activator 4	5		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:1330842	Rasal1	RAS protein activator like 1 (GAP1 like)	5		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:2443881	Rasal2	RAS protein activator like 2	1		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:2444128	Rasal3	RAS protein activator like 3	17		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:1354694	Rgs1	regulator of G-protein signaling 1	1		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q08116 	J:164563 	
+MGI:1098271	Rgs2	regulator of G-protein signaling 2	1		cytoplasmic side of plasma membrane			IDA		J:172850 	
+MGI:1098271	Rgs2	regulator of G-protein signaling 2	1		cytoplasmic side of plasma membrane			ISO	RGD:621665 	J:155856 	
+MGI:1354730	Rgs6	regulator of G-protein signaling 6	12		heterotrimeric G-protein complex			IEA	IPR015898 IPR036284 	J:72247 	
+MGI:1346089	Rgs7	regulator of G protein signaling 7	1		heterotrimeric G-protein complex			IEA	IPR015898 IPR036284 	J:72247 	
+MGI:108408	Rgs8	regulator of G-protein signaling 8	1		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:3571 	J:155856 	
+MGI:1338824	Rgs9	regulator of G-protein signaling 9	11		heterotrimeric G-protein complex			IEA	IPR015898 IPR036284 	J:72247 	
+MGI:1354739	Rgs11	regulator of G-protein signaling 11	17		heterotrimeric G-protein complex			IEA	IPR015898 IPR036284 	J:72247 	
+MGI:1096342	Rhoa	ras homolog family member A	9		extrinsic component of cytoplasmic side of plasma membrane			ISO	P61586 	J:164563 	
+MGI:1934704	Rnf31	ring finger protein 31	14		cytoplasmic side of plasma membrane			IDA		J:87379 J:161997 	
+MGI:99659	Ryr1	ryanodine receptor 1, skeletal muscle	7		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:1586637 	J:155856 	
+MGI:99685	Ryr2	ryanodine receptor 2, cardiac	13		extrinsic component of cytoplasmic side of plasma membrane			ISO	RGD:620314 	J:155856 	
+MGI:1339467	S100a6	S100 calcium binding protein A6 (calcyclin)	3		extrinsic component of cytoplasmic side of plasma membrane			ISO	P06703 	J:164563 	
+MGI:2685570	Shroom4	shroom family member 4	X		cytoplasmic side of plasma membrane			ISO	Q9ULL8 	J:164563 	
+MGI:2685570	Shroom4	shroom family member 4	X		cytoplasmic side of plasma membrane			ISS	Q9ULL8 	J:116398 	
+MGI:104295	Sla	src-like adaptor	15		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1925049	Sla2	Src-like-adaptor 2	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:98331	Snap25	synaptosomal-associated protein 25	2		extrinsic component of cytoplasmic side of plasma membrane	is a part of neuron of cerebral cortex		IDA		J:238447 	
+MGI:1916428	Snx5	sorting nexin 5	2		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q9Y5X3 	J:164563 	
+MGI:1913866	Snx9	sorting nexin 9	17		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q9Y5X1 	J:164563 	
+MGI:2137642	Snx18	sorting nexin 18	13		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q96RF0 	J:164563 	
+MGI:98385	Spta1	spectrin alpha, erythrocytic 1	1		cytoplasmic side of plasma membrane			ISO	RGD:1305194 	J:155856 	
+MGI:98397	Src	Rous sarcoma oncogene	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:101865	Srms	src-related kinase lacking C-terminal regulatory tyrosine and N-terminal myristylation sites	2		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:3606571	Stac3	SH3 and cysteine rich domain 3	10		extrinsic component of cytoplasmic side of plasma membrane			IDA		J:252007 	
+MGI:2141396	Styk1	serine/threonine/tyrosine kinase 1	6		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1914293	Syap1	synapse associated protein 1	X		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q96A49 	J:164563 	
+MGI:99515	Syk	spleen tyrosine kinase	13		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:3039785	Syngap1	synaptic Ras GTPase activating protein 1 homolog (rat)	17		intrinsic component of the cytoplasmic side of the plasma membrane			IBA	PTN000022879 	J:161428 	
+MGI:98662	Tec	tec protein tyrosine kinase	5		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:98732	Tgm3	transglutaminase 3, E polypeptide	2		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q08188 	J:164563 	
+MGI:98735	Th	tyrosine hydroxylase	7		cytoplasmic side of plasma membrane			ISO	P07101 	J:164563 	
+MGI:103306	Tiam1	T cell lymphoma invasion and metastasis 1	16		extrinsic component of cytoplasmic side of plasma membrane			ISO	Q13009 	J:164563 	
+MGI:1930958	Tnk1	tyrosine kinase, non-receptor, 1	11		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1858308	Tnk2	tyrosine kinase, non-receptor, 2	16		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:101835	Traf2	TNF receptor-associated factor 2	2		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:108041	Traf3	TNF receptor-associated factor 3	12		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:107548	Traf5	TNF receptor-associated factor 5	1		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:108072	Traf6	TNF receptor-associated factor 6	2		cytoplasmic side of plasma membrane			IDA		J:161997 	
+MGI:102960	Txk	TXK tyrosine kinase	5		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:1929470	Tyk2	tyrosine kinase 2	9		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:99147	Yes1	YES proto-oncogene 1, Src family tyrosine kinase	5		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+MGI:99613	Zap70	zeta-chain (TCR) associated protein kinase	1		extrinsic component of cytoplasmic side of plasma membrane			IBA	PTN000700357 	J:161428 	
+
