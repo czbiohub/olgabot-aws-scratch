@@ -77,3 +77,5 @@ bracer assemble -p 16 --config_file /mnt/data/fastq/bracer.conf --species Mmus \
 
 
 touch /home/ubuntu/anaconda/lib/python3.6/site-packages/bracer.conf
+
+python ~/code/olgabot-aws-scratch/run_bracer_many_fastqs.py /mnt/data/fastq/*fastq.gz
