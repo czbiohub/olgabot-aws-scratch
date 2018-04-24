@@ -14,6 +14,13 @@ bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
 """
 
 
+def maybe_make_directory(folder):
+    try:
+        os.makedirs(folder)
+    except OSError:
+        pass
+
+
 @click.command()
 @click.argument('fastq_gzs', nargs=-1)
 @click.option('--config_file', default='/mnt/data/fastq/bracer.conf',
@@ -43,8 +50,12 @@ def cli(fastq_gzs, config_file, species, output_folder, n_processes):
         print(command)
         command = shlex.split(command)
 
-        stdout = f'{output_folder}/stdout.txt'
-        stderr = f'{output_folder}/stderr.txt'
+        sample_dir = os.path.join(output_folder, sample_id)
+        maybe_make_directory(sample_dir)
+
+        stdout = os.path.join(sample_dir, 'stdout.txt')
+        stderr = os.path.join(sample_dir, 'stderr.txt')
+
 
         with open(stdout, 'w') as file_out:
             with open(stderr, 'w') as file_err:
