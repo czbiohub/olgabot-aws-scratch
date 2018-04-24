@@ -18,11 +18,62 @@ pip install .
 
 
 # Run Bracer
-bracer assemble -p 16 --species Mmus \
-    P9-MAA001889-3_38_F-1-1_S239 \
-    /mnt/data/bracer_output/P9-MAA001889-3_38_F-1-1_S239 \
-    P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
-    P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    P9-MAA001889-3_38_F-1-1_S239_junc500 \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+
+# Run Bracer  - longer junction
+bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    --max_junc_len 500 \
+    P9-MAA001889-3_38_F-1-1_S239_junc500 \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+
+
+# Run Bracer - no trimming
+bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    --no_trimming  \
+    P9-MAA001889-3_38_F-1-1_S239_no-trimming \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+
+
+# Run Bracer - no trimming, longer junction
+bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    --no_trimming  \
+    --max_junc_len 500 \
+    P9-MAA001889-3_38_F-1-1_S239_notrimming-junc500 \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+
+
+# rerun no trimming and run notrimming + longer junction right after
+bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    --no_trimming  \
+    P9-MAA001889-3_38_F-1-1_S239_no-trimming \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz && bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
+    --no_trimming  \
+    --max_junc_len 500 \
+    P9-MAA001889-3_38_F-1-1_S239_notrimming-junc500 \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R1_001.fastq.gz \
+    /mnt/data/fastq/P9-MAA001889-3_38_F-1-1_S239_R2_001.fastq.gz
+
+
+
+# Run Bracer on most deeply sequenced samples
+bracer assemble -p 16 --config_file /mnt/data/fastq/bracer.conf --species Mmus \
+    I8-MAA000599-3_8_M-1-1_S246 \
+    /mnt/data/bracer_output/ \
+    /mnt/data/fastq/I8-MAA000599-3_8_M-1-1_S246_R1_001.fastq.gz \
+    /mnt/data/fastq/I8-MAA000599-3_8_M-1-1_S246_R2_001.fastq.gz
 
 
 touch /home/ubuntu/anaconda/lib/python3.6/site-packages/bracer.conf
