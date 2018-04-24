@@ -17,10 +17,10 @@ bracer assemble -p 16 --species Mmus --config_file /mnt/data/fastq/bracer.conf \
 @click.command()
 @click.argument('fastq_gzs', nargs=-1)
 @click.option('--config_file', default='/mnt/data/fastq/bracer.conf',
-              type=click.File)
+              type=click.File())
 @click.option('--species', default="Mmus", type=str)
 @click.option('--output_folder', default="/mnt/data/bracer_output_v2/",
-              type=click.Path)
+              type=click.Path())
 @click.option('--n-processes', default=16, type=int)
 def cli(fastq_gzs, config_file, species, output_folder, n_processes):
     for fastq_gz in fastq_gzs:
