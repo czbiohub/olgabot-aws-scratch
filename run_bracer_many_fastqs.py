@@ -32,7 +32,7 @@ def maybe_make_directory(folder):
 def cli(fastq_gzs, config_file, species, output_folder, n_processes):
     for fastq_gz in fastq_gzs:
         # Only operate on R1s to avoid duplication
-        if "R2" in fastq_gzs:
+        if "_R2_" in fastq_gz:
             continue
         read1 = fastq_gz
         read2 = fastq_gz.replace('_R1_', '_R2_')
