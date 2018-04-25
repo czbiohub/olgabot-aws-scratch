@@ -34,5 +34,4 @@ ls -1  /mnt/data/rawdata/sra/mnt/data/rnaseq/sra/*/*.sra | xargs -P ${CORES} -I{
 export FASTQ_DUMP_FLAGS='--outdir /mnt/data/fastq_dump_v3 --gzip --skip-technical  --readids --read-filter pass --dumpbase --clip --defline-seq '@$sn[_$rn]/$ri' --split-files'
 ls -1  /mnt/data/rawdata/sra/mnt/data/rnaseq/sra/*/*.sra | xargs -P ${CORES} -I{} bash -c "fastq-dump $FASTQ_DUMP_FLAGS {}"
 
-
-ls -1  /mnt/data/rawdata/sra/mnt/data/rnaseq/sra/*/*.sra | xargs -P ${CORES} -I{} bash -c "fastq-dump $FASTQ_DUMP_FLAGS {}" && export FASTQ_DUMP_FLAGS='--outdir /mnt/data/fastq_dump_v3 --gzip --skip-technical  --readids --read-filter pass --dumpbase --clip --defline-seq '@$sn[_$rn]/$ri' --split-files' && ls -1  /mnt/data/rawdata/sra/mnt/data/rnaseq/sra/*/*.sra | xargs -P ${CORES} -I{} bash -c "fastq-dump $FASTQ_DUMP_FLAGS {}"
+ls -1  /mnt/data/rawdata/sra/mnt/data/rnaseq/sra/*/*.sra | xargs -P ${CORES} -I{} bash -c "fastq-dump --outdir /mnt/data/fastq_dump_v4 --gzip --skip-technical  --readids --read-filter pass --dumpbase --clip --defline-seq '@$sn[_$rn]/$ri' --split-files {}"
