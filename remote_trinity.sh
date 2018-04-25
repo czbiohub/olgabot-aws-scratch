@@ -10,6 +10,14 @@ Trinity --seqType fq --max_memory 4G \
 
 # SRR629563 = U-2 OS cell line
 Trinity --seqType fq --max_memory 16G \
-    --left /mnt/data/fastq/rnaseq/SRR629563_pass_1.fastq \
-    --right /mnt/data/fastq/rnaseq/SRR629563_pass_2.fastq \
+    --left /mnt/data/fastq_dump_v2/SRR629563_1.fastq \
+    --right /mnt/data/fastq_dump_v2/SRR629563_2.fastq \
+    --output /mnt/data/trinity-output/fastq_dump_v2/u2os/trinity-output \
+    --CPU 6 --verbose --workdir /mnt/data/trinity-workdir
+
+# SRR629563 = U-2 OS cell line
+Trinity --seqType fq --max_memory 16G \
+    --left /mnt/data/fastq_dump_v3/SRR629563_pass_1.fastq \
+    --right /mnt/data/fastq_dump_v3/SRR629563_pass_2.fastq \
+    --output /mnt/data/trinity-output/fastq_dump_v3/u2os/ \
     --CPU 6 --verbose --workdir /mnt/data/trinity-workdir
