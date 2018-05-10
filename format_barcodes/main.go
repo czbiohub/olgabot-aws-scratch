@@ -45,7 +45,7 @@ func main() {
   // Create a fasta writer with width 80:
   writer := fastq.NewWriter(fho)
 
-  var i uint8 = 0
+  var i uint64 = 0
   for sc.Next() {
 	seq := sc.Seq().(*linear.QSeq)
 	// do stuff with seq as a *linear.QSeq
