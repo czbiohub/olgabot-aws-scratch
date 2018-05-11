@@ -46,13 +46,16 @@ func main() {
   writer := fastq.NewWriter(fho)
 
   var i uint64 = 0
+  var sequence_description string
+
   for sc.Next() {
 	seq := sc.Seq().(*linear.QSeq)
 	// do stuff with seq as a *linear.QSeq
 
 	annotation := seq.CloneAnnotation()
 	description := annotation.Desc
-	fmt.Println("i:", i,  "\tID:", annotation.ID, "\tdescription:", description)
+	sequence_description = description
+	  fmt.Println("i:", i,  "\tID:", annotation.ID, "\tdescription:", description)
 
 	// -1 means return all found
 	findall := pattern.FindAllStringSubmatch(description, -1)[0]
@@ -72,6 +75,7 @@ func main() {
   err = sc.Error()
   // handle errors
   if err != nil {
+    fmt.Println("last sequence:", sequence_description)
 	panic(err)
   }
 
