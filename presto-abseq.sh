@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Super script to run the pRESTO 0.5.4 pipeline on AbVitro AbSeq data
-# 
+#
 # Author:  Jason Anthony Vander Heiden, Gur Yaari, Namita Gupta
 # Date:    2017.09.19
-# 
+#
 # Arguments:
 #   -1  Read 1 FASTQ sequence file (sequence beginning with the C-region or J-segment).
 #   -2  Read 2 FASTQ sequence file (sequence beginning with the leader or V-segment).
@@ -165,7 +165,7 @@ fi
 
 # Check R1 primers
 if ! ${R1_PRIMERS_SET}; then
-    R1_PRIMERS="/usr/local/share/protocols/AbSeq/AbSeq_R1_Human_IG_Primers.fasta"
+    R1_PRIMERS="/Users/eric.waltari/testing/2018mar_miseq_2million/primers_R1.fasta"
 elif [ -e ${R1_PRIMERS} ]; then
     R1_PRIMERS=$(readlink -f ${R1_PRIMERS})
 else
@@ -230,11 +230,11 @@ FS_QUAL=20
 FS_MASK=30
 
 # MaskPrimers run parameters
-MP_UIDLEN=17
-MP_R1_MAXERR=0.2
-MP_R2_MAXERR=0.5
-CREGION_MAXLEN=100
-CREGION_MAXERR=0.3
+MP_UIDLEN=8
+MP_R1_MAXERR=0.3
+MP_R2_MAXERR=0.3
+CREGION_MAXLEN=106
+CREGION_MAXERR=0.25
 
 # AlignSets run parameters
 MUSCLE_EXEC=muscle
@@ -309,10 +309,10 @@ else
 fi
 
 
-# Identify primers and UID 
+# Identify primers and UID
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "MaskPrimers score"
 MaskPrimers.py score -s $MPR1_FILE -p $R1_PRIMERS --mode cut \
-    --start $BARCODE_LENGTH --maxerror $MP_R1_MAXERR --nproc $NPROC \
+    --start 8 --barcode --maxerror $MP_R1_MAXERR --nproc $NPROC \
     --log "${LOGDIR}/primers-1.log" --outname "${OUTNAME}-R1" --outdir . \
     >> $PIPELINE_LOG 2> $ERROR_LOG
 MaskPrimers.py score -s $MPR2_FILE -p $R2_PRIMERS --mode cut \
@@ -325,63 +325,76 @@ check_error
 # Assign UIDs to read 1 sequences
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "PairSeq"
 PairSeq.py -1 "${OUTNAME}-R1_primers-pass.fastq" -2 "${OUTNAME}-R2_primers-pass.fastq" \
-    --2f BARCODE --coord $COORD >> $PIPELINE_LOG 2> $ERROR_LOG
+    --1f BARCODE --2f BARCODE --coord $COORD >> $PIPELINE_LOG 2> $ERROR_LOG
+ParseHeaders.py collapse -s "${OUTNAME}-R1_primers-pass_pair-pass.fastq" -f BARCODE --act cat
+ParseHeaders.py collapse -s "${OUTNAME}-R2_primers-pass_pair-pass.fastq" -f BARCODE --act cat
 check_error
 
 
 # Multiple align UID read groups
 if $ALIGN_SETS; then
     printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "AlignSets muscle"
-	AlignSets.py muscle -s "${OUTNAME}-R1_primers-pass_pair-pass.fastq" --exec $MUSCLE_EXEC \
+	AlignSets.py muscle -s "${OUTNAME}-R1_primers-pass_pair-pass_reheader.fastq" --exec $MUSCLE_EXEC \
 	    --nproc $NPROC --log "${LOGDIR}/align-1.log" --outname "${OUTNAME}-R1" \
 	    >> $PIPELINE_LOG 2> $ERROR_LOG
-	AlignSets.py muscle -s "${OUTNAME}-R2_primers-pass_pair-pass.fastq" --exec $MUSCLE_EXEC \
+	AlignSets.py muscle -s "${OUTNAME}-R2_primers-pass_pair-pass_reheader.fastq" --exec $MUSCLE_EXEC \
 	    --nproc $NPROC --log "${LOGDIR}/align-2.log" --outname "${OUTNAME}-R2" \
 	    >> $PIPELINE_LOG 2> $ERROR_LOG
 	BCR1_FILE="${OUTNAME}-R1_align-pass.fastq"
 	BCR2_FILE="${OUTNAME}-R2_align-pass.fastq"
 	check_error
 else
-	BCR1_FILE="${OUTNAME}-R1_primers-pass_pair-pass.fastq"
-	BCR2_FILE="${OUTNAME}-R2_primers-pass_pair-pass.fastq"
+	BCR1_FILE="${OUTNAME}-R1_primers-pass_pair-pass_reheader.fastq"
+	BCR2_FILE="${OUTNAME}-R2_primers-pass_pair-pass_reheader.fastq"
 fi
 
 
-# Build UID consensus sequences
+## ADD NEW ANNOTATION COMBINING 08,12 PRIMERS HERE (RENAME BARCODE)
+printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "ParseHeaders collapse 08N,12N primer field"
+ParseHeaders.py copy -s "${OUTNAME}-R1_primers-pass_pair-pass_reheader.fastq" -f PRIMER -k PRIMERCLPSD --act first \
+    --outname "${OUTNAME}-R1" > /dev/null 2> $ERROR_LOG
+ParseHeaders.py copy -s "${OUTNAME}-R2_primers-pass_pair-pass_reheader.fastq" -f PRIMER -k PRIMERCLPSD --act first \
+    --outname "${OUTNAME}-R2" > /dev/null 2> $ERROR_LOG
+BCR1_FILE="${OUTNAME}-R1_reheader.fastq"
+BCR2_FILE="${OUTNAME}-R2_reheader.fastq"
+
+check_error
+
+# Build UID consensus sequences - NOTE I CHANGED PRIMER TO PRIMERCLPSD AND ALSO ADDED --CF COMMAND TO LIST ALL ISOTYPES
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "BuildConsensus"
 if $BC_ERR_FLAG; then
     if $BC_PRCONS_FLAG; then
-        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMER --prcons $BC_PRCONS \
+        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMERCLPSD --prcons $BC_PRCONS \
             -n $BC_MINCOUNT -q $BC_QUAL --maxerror $BC_MAXERR --maxgap $BC_MAXGAP \
-            --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
+            --cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
             --outname "${OUTNAME}-R1" >> $PIPELINE_LOG 2> $ERROR_LOG
     else
-        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMER \
+        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMERCLPSD \
             -n $BC_MINCOUNT -q $BC_QUAL --maxerror $BC_MAXERR --maxgap $BC_MAXGAP \
-            --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
+            --cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
             --outname "${OUTNAME}-R1" >> $PIPELINE_LOG 2> $ERROR_LOG
     fi
 
-	BuildConsensus.py -s $BCR2_FILE --bf BARCODE --pf PRIMER \
+	BuildConsensus.py -s $BCR2_FILE --bf BARCODE --pf PRIMERCLPSD \
 	    -n $BC_MINCOUNT -q $BC_QUAL --maxerror $BC_MAXERR --maxgap $BC_MAXGAP \
-	    --nproc $NPROC --log "${LOGDIR}/consensus-2.log" \
+	    --cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-2.log" \
 	    --outname "${OUTNAME}-R2" >> $PIPELINE_LOG 2> $ERROR_LOG
 else
     if $BC_PRCONS_FLAG; then
-        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMER --prcons $BC_PRCONS \
+        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMERCLPSD --prcons $BC_PRCONS \
             -n $BC_MINCOUNT -q $BC_QUAL --maxgap $BC_MAXGAP \
-            --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
+            --cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
             --outname "${OUTNAME}-R1" >> $PIPELINE_LOG 2> $ERROR_LOG
     else
-        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMER \
+        BuildConsensus.py -s $BCR1_FILE --bf BARCODE --pf PRIMERCLPSD \
             -n $BC_MINCOUNT -q $BC_QUAL --maxgap $BC_MAXGAP \
-            --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
+            --cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-1.log" \
             --outname "${OUTNAME}-R1" >> $PIPELINE_LOG 2> $ERROR_LOG
     fi
 
-	BuildConsensus.py -s $BCR2_FILE --bf BARCODE --pf PRIMER \
+	BuildConsensus.py -s $BCR2_FILE --bf BARCODE --pf PRIMERCLPSD \
     	-n $BC_MINCOUNT -q $BC_QUAL --maxgap $BC_MAXGAP \
-    	--nproc $NPROC --log "${LOGDIR}/consensus-2.log" \
+    	--cf PRIMERCLPSD --act set --nproc $NPROC --log "${LOGDIR}/consensus-2.log" \
     	--outname "${OUTNAME}-R2" >> $PIPELINE_LOG 2> $ERROR_LOG
 fi
 check_error
@@ -399,7 +412,7 @@ printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "AssemblePairs sequent
 if $BC_PRCONS_FLAG; then
     PRFIELD="PRCONS"
 else
-    PRFIELD="PRIMER"
+    PRFIELD=""
 fi
 
 AssemblePairs.py sequential -1 "${OUTNAME}-R2_consensus-pass_pair-pass.fastq" \
@@ -427,25 +440,35 @@ fi
 if $ALIGN_CREGION; then
     # Annotate with internal C-region
     printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "MaskPrimers align"
+    CREGION_FIELD="CREGION"
     MaskPrimers.py align -s $PH_FILE -p $CREGION_SEQ \
         --maxlen $CREGION_MAXLEN --maxerror $CREGION_MAXERR \
         --mode tag --revpr --skiprc \
         --log "${LOGDIR}/cregion.log" --outname "${OUTNAME}-CR" --nproc $NPROC \
         >> $PIPELINE_LOG 2> $ERROR_LOG
 
-    # Renamer primer field
+    # Rename primer field
     printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "ParseHeaders rename"
-    ParseHeaders.py rename -s "${OUTNAME}-CR_primers-pass.fastq" -f PRIMER -k CREGION \
+    ParseHeaders.py rename -s "${OUTNAME}-CR_primers-pass.fastq" -f CONSCOUNT -k CREGION \
         --outname "${OUTNAME}-CR" > /dev/null 2> $ERROR_LOG
 
     PH_FILE="${OUTNAME}-CR_reheader.fastq"
-    CREGION_FIELD="CREGION"
 
     check_error
 else
     CREGION_FIELD=""
 fi
 
+
+# ADDING NEW FIELD COMBINING 08 AND 12N PRIMERS - APRIL 25, REMOVING STEP HERE AND MOVING TO EARLIER
+#printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "ParseHeaders rename"
+#ParseHeaders.py copy -s $PH_FILE -f PRCONS -k CREGION --act first \
+#    --outname "${OUTNAME}-CR" > /dev/null 2> $ERROR_LOG
+#
+#PH_FILE="${OUTNAME}-CR_reheader.fastq"
+#CREGION_FIELD="CREGION"
+#
+#check_error
 
 # Rewrite header with minimum of CONSCOUNT
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "ParseHeaders collapse"
@@ -459,19 +482,19 @@ check_error
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "CollapseSeq"
 if $CS_KEEP; then
     CollapseSeq.py -s "${OUTNAME}-final_total.fastq" -n $CS_MISS \
-    --uf PRCONS $CREGION_FIELD --cf CONSCOUNT --act sum --inner \
-    --keepmiss --outname "${OUTNAME}-final" >> $PIPELINE_LOG 2> $ERROR_LOG
+        --uf PRCONS $CREGION_FIELD --cf CONSCOUNT --act sum --inner \
+        --keepmiss --outname "${OUTNAME}-final" >> $PIPELINE_LOG 2> $ERROR_LOG
 else
     CollapseSeq.py -s "${OUTNAME}-final_total.fastq" -n $CS_MISS \
-    --uf PRCONS $CREGION_FIELD --cf CONSCOUNT --act sum --inner \
-    --outname "${OUTNAME}-final" >> $PIPELINE_LOG 2> $ERROR_LOG
+        --uf PRCONS $CREGION_FIELD --cf CONSCOUNT --act sum --inner \
+        --outname "${OUTNAME}-final" >> $PIPELINE_LOG 2> $ERROR_LOG
 fi
 check_error
 
 
-# Filter to sequences with at least 2 supporting sources
+# Filter to sequences with at least 5 supporting sources
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "SplitSeq group"
-SplitSeq.py group -s "${OUTNAME}-final_collapse-unique.fastq" -f CONSCOUNT --num 2 \
+SplitSeq.py group -s "${OUTNAME}-final_collapse-unique.fastq" -f CONSCOUNT --num 5 \
     >> $PIPELINE_LOG 2> $ERROR_LOG
 check_error
 
@@ -484,8 +507,8 @@ ParseHeaders.py table -s "${OUTNAME}-final_total.fastq" \
 ParseHeaders.py table -s "${OUTNAME}-final_collapse-unique.fastq" \
     -f ID PRCONS $CREGION_FIELD CONSCOUNT DUPCOUNT --outname "final-unique" \
     --outdir ${LOGDIR} >> $PIPELINE_LOG 2> $ERROR_LOG
-ParseHeaders.py table -s "${OUTNAME}-final_collapse-unique_atleast-2.fastq" \
-    -f ID PRCONS $CREGION_FIELD CONSCOUNT DUPCOUNT --outname "final-unique-atleast2" \
+ParseHeaders.py table -s "${OUTNAME}-final_collapse-unique_atleast-5.fastq" \
+    -f ID PRCONS $CREGION_FIELD CONSCOUNT DUPCOUNT --outname "final-unique-atleast5" \
     --outdir ${LOGDIR} >> $PIPELINE_LOG 2> $ERROR_LOG
 check_error
 
@@ -499,7 +522,7 @@ fi
 ParseLog.py -l "${LOGDIR}/primers-1.log" "${LOGDIR}/primers-2.log" -f ID BARCODE PRIMER ERROR \
     --outdir ${LOGDIR} > /dev/null  2> $ERROR_LOG &
 ParseLog.py -l "${LOGDIR}/consensus-1.log" "${LOGDIR}/consensus-2.log" \
-    -f BARCODE SEQCOUNT CONSCOUNT PRIMER PRCONS PRCOUNT PRFREQ ERROR \
+    -f BARCODE SEQCOUNT CONSCOUNT PRIMERCLPSD PRCONS PRCOUNT PRFREQ ERROR \
     --outdir ${LOGDIR} > /dev/null  2> $ERROR_LOG &
 ParseLog.py -l "${LOGDIR}/assemble.log" \
     -f ID REFID LENGTH OVERLAP GAP ERROR PVALUE EVALUE1 EVALUE2 IDENTITY FIELDS1 FIELDS2 \
@@ -509,7 +532,7 @@ if $MASK_LOWQUAL; then
         --outdir ${LOGDIR} > /dev/null  2> $ERROR_LOG &
 fi
 if $ALIGN_CREGION; then
-    ParseLog.py -l "${LOGDIR}/cregion.log" -f ID PRIMER ERROR \
+    ParseLog.py -l "${LOGDIR}/cregion.log" -f ID PRIMERCLPSD ERROR \
         --outdir ${LOGDIR} > /dev/null  2> $ERROR_LOG &
 fi
 wait
@@ -526,7 +549,7 @@ fi
 printf "  %2d: %-*s $(date +'%H:%M %D')\n" $((++STEP)) 24 "Compressing files"
 LOG_FILES=$(ls ${LOGDIR}/*.log | grep -v "pipeline")
 FILTER_FILES="$(basename ${R1_READS})\|$(basename ${R2_READS})\|$(basename ${R1_PRIMERS})\|$(basename ${R2_PRIMERS})"
-FILTER_FILES+="\|final_total.fastq\|final_collapse-unique.fastq\|final_collapse-unique_atleast-2.fastq"
+FILTER_FILES+="\|final_total.fastq\|final_collapse-unique.fastq\|final_collapse-unique_atleast-5.fastq"
 TEMP_FILES=$(ls *.fastq | grep -v ${FILTER_FILES})
 if $ZIP_FILES; then
     tar -zcf log_files.tar.gz $LOG_FILES
@@ -541,4 +564,3 @@ fi
 # End
 printf "DONE\n\n"
 cd ../
-
